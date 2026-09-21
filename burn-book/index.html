@@ -13,6 +13,7 @@
     --ink:#20291A; --ink-2:#3B4130; --ink-3:#666C58;
     --line:#DCD3D6; --line-2:#EFE4F0;
     --lime:#EBEA61; --lime-deep:#C7C63C; --lime-tint:#F8F8DE; --lime-border:#DAC7DE;
+    --taupe:#EEEEE0; --taupe-line:#DCDCC6;
     --red:#B50D13; --red-ink:#B50D13;
     --sans:'Lato',Arial,sans-serif; --display:'Poppins',Arial,sans-serif; --label:'Raleway',Arial,sans-serif;
   }
@@ -47,14 +48,14 @@
   .intro p:last-child{margin-bottom:0}
   .intro .sign{color:var(--ink-3);font-style:italic;font-size:15.5px}
 
-  .toc{margin:36px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
-  .toc-lab{font-family:var(--label);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--ink-3);text-align:center;margin:0 0 14px}
-  .toc-list{list-style:none;margin:0;padding:0;display:grid;gap:2px;grid-template-columns:1fr 1fr;max-width:900px;margin-inline:auto}
-  .toc-list a{display:flex;gap:12px;align-items:baseline;padding:10px 12px;text-decoration:none;color:var(--ink);border-radius:8px}
-  .toc-list a:hover{background:var(--surface-2)}
-  .toc-list .n{font-family:var(--display);font-weight:800;font-size:14px;color:var(--red-ink);width:22px;flex:0 0 auto}
-  .toc-list .t{font-family:var(--label);font-weight:700;font-size:15.5px}
-  .toc-list .d{color:var(--ink-3);font-size:13.5px}
+  .toc{margin:36px 0 0;background:var(--taupe);border:1px solid var(--taupe-line);border-radius:20px;padding:34px 28px}
+  .toc-lab{font-family:var(--label);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:15px;color:var(--ink-2);text-align:center;margin:0 0 18px}
+  .toc-list{list-style:none;margin:0;padding:0;display:grid;gap:4px;grid-template-columns:1fr 1fr;max-width:960px;margin-inline:auto}
+  .toc-list a{display:flex;gap:14px;align-items:baseline;padding:12px 14px;text-decoration:none;color:var(--ink);border-radius:10px}
+  .toc-list a:hover{background:rgba(255,255,255,.6)}
+  .toc-list .n{font-family:var(--display);font-weight:800;font-size:18px;color:var(--red-ink);width:26px;flex:0 0 auto}
+  .toc-list .t{font-family:var(--label);font-weight:700;font-size:19px}
+  .toc-list .d{color:var(--ink-2);font-size:16px}
 
   .bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:14px 0}
   .bar-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
