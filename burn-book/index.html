@@ -14,11 +14,12 @@
     --line:#DCD3D6; --line-2:#EFE4F0;
     --lime:#EBEA61; --lime-deep:#C7C63C; --lime-tint:#F8F8DE; --lime-border:#DAC7DE;
     --taupe:#EEEEE0; --taupe-line:#DCDCC6;
+    --lilac-band:#F3E9F5; --lilac-band-line:#E3CFE8;
     --red:#B50D13; --red-ink:#B50D13;
     --sans:'Lato',Arial,sans-serif; --display:'Poppins',Arial,sans-serif; --label:'Raleway',Arial,sans-serif;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .shell{max-width:1160px;margin:0 auto;padding:0 28px}
   .narrow{max-width:640px}
   img{max-width:100%;display:block}
@@ -69,6 +70,10 @@
   .jump a:hover{border-color:var(--red-ink);color:var(--red-ink)}
 
   .chapter{margin:74px 0 0;scroll-margin-top:110px}
+  .chapter.tint{width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:56px 0 64px}
+  .chapter.tint-taupe{background:var(--taupe)}
+  .chapter.tint-lilac{background:var(--lilac-band)}
+  .chapter-inner{max-width:1160px;margin:0 auto;padding:0 28px}
   .ch-head{display:flex;align-items:flex-start;gap:16px}
   .ch-icon{flex:0 0 auto;width:52px;height:52px;border-radius:13px;background:var(--lime-tint);border:1.5px solid var(--lime-border);display:flex;align-items:center;justify-content:center;color:var(--red-ink)}
   .ch-icon svg{width:27px;height:27px}
@@ -285,7 +290,7 @@ const CHAPTERS = [
         service:'2 quotes have been sitting for 3+ days — worth a nudge today. 1 new inquiry came in overnight for a rush job.',
         product:'1 order flagged as damaged in transit, 2 return requests waiting on you. Nothing else needs attention today.'}},
 
-  {num:'02', id:'skills', tag:'Save it once', title:'Skills',
+  {num:'02', id:'skills', tag:'Save it once', title:'Skills', tint:'taupe',
    icon:'<path d="M6.5 3.5h11a1 1 0 0 1 1 1V21l-6.5-4.3L5.5 21V4.5a1 1 0 0 1 1-1z"/>',
    changed:'Once Claude gets a task exactly right, you can save the process behind it as a Skill — a recipe it follows the same way every time you run it again, instead of you re-explaining the task from scratch.',
    honest:'Only worth saving for tasks you’ll actually repeat. A one-off doesn’t need a Skill.',
@@ -315,7 +320,7 @@ const CHAPTERS = [
         service:'3 quote drafts ready before lunch, each pulled straight from what the client actually asked for.',
         product:'1 review reply drafted, already acknowledging the specific complaint instead of a generic apology.'}},
 
-  {num:'04', id:'code', tag:'The build-it-yourself part', title:'Claude Code',
+  {num:'04', id:'code', tag:'The build-it-yourself part', title:'Claude Code', tint:'lilac',
    icon:'<path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/>',
    changed:'Claude can now write and assemble an actual working web page — a sales page, a landing page, a small app — from your copy, your brand colors, and a plain description. People are calling this "vibe coding." It’s really just faster drafting.',
    honest:'Treat the result as a fast first draft, not a finished site. It still needs a real review and someone who knows your page builder before it goes live.',
@@ -347,7 +352,7 @@ const CHAPTERS = [
         service:'A one-pager clients actually read at onboarding, instead of a wall of text nobody opens.',
         product:'A sell sheet you can send a buyer today instead of waiting on your designer’s queue.'}},
 
-  {num:'06', id:'dashboards', tag:'See it without digging', title:'Live Artifacts',
+  {num:'06', id:'dashboards', tag:'See it without digging', title:'Live Artifacts', tint:'taupe',
    icon:'<line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3.5" height="8"/><rect x="10.5" y="7" width="3.5" height="13"/><rect x="15" y="4" width="3.5" height="16"/>',
    changed:'Claude can turn a plain description of your data into a working, shareable mini dashboard — a live page instead of a spreadsheet you have to remember to open and recalculate.',
    honest:'It shows you where the problem is. What you do next is still up to you.',
@@ -398,8 +403,10 @@ function render(){
     const linkImgHtml = ch.linkImage ? '<a class="link-img" href="'+(ch.howtoLink?ch.howtoLink.url:'#')+'" target="_blank" rel="noopener"><img src="'+ch.linkImage+'" alt="'+escA(ch.howtoLink?ch.howtoLink.label:'')+'"></a>' : '';
     const visualHtml = ch.visual || '';
 
-    const sec=document.createElement('div'); sec.className='chapter'; sec.id=ch.id;
-    sec.innerHTML=
+    const sec=document.createElement('div');
+    sec.className = ch.tint ? 'chapter tint tint-'+ch.tint : 'chapter';
+    sec.id=ch.id;
+    const chapterBody=
       '<div class="ch-head">'+
         '<div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+ch.icon+'</svg></div>'+
         '<div class="ch-meta"><span class="ch-num">'+ch.num+'</span><span class="ch-tag">'+ch.tag+'</span><h2>'+ch.title+'</h2></div>'+
@@ -429,6 +436,7 @@ function render(){
           '</div>'+
         '</div>'+
       '</div>';
+    sec.innerHTML = ch.tint ? '<div class="chapter-inner">'+chapterBody+'</div>' : chapterBody;
     chaptersEl.appendChild(sec);
 
     const inputs=[...sec.querySelectorAll('input')];
