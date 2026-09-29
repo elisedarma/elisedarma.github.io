@@ -207,11 +207,10 @@
   <div class="hero">
     <div class="hero-grid">
       <div>
-        <p class="kicker">The 2026 AI Burn Book</p>
-        <h1>Get in. We're <em>automating</em> everything.</h1>
+        <h1>Get in.<br>We're <em>automating</em> everything.</h1>
         <p class="sub">Six real updates to Claude in 2026. Not designed to replace humans, but to make you a more <em>efficient</em> human. The result? More leads, clients and sales.</p>
         <div class="intro">
-          <p>If you've been heads-down running your business this year, AI has moved a lot. Here's the actual catch-up: what changed, what it looks like when you use it, and where to start.</p>
+          <p>If you've been heads-down running your business this year, AI has moved a lot. <b>Here's the actual catch-up: what changed, what it looks like when you use it, and where to start.</b></p>
           <p class="sign">Skip to whichever one is actually slowing you down this week. You don't need all six.</p>
         </div>
       </div>
@@ -236,7 +235,7 @@
 
   <div class="bar">
     <div class="bar-row">
-      <span class="bar-lab">Reading this as:</span>
+      <span class="bar-lab">I'm reading this as a:</span>
       <div class="chips" id="chips">
         <button class="chip on" data-n="coach">Coach</button>
         <button class="chip" data-n="service">Service provider</button>
@@ -251,7 +250,7 @@
 
   <div class="team">
     <div class="team-text">
-      <p class="cap">From an actual AI retreat this year</p>
+      <p class="cap">From our in-person AI retreat to your business</p>
       <p>This isn't theoretical. My team and I sit down and actually learn these AI tools from coach Brittany Long.</p>
     </div>
     <img src="images/team-retreat.jpg" alt="Team Elise at an AI strategy retreat">
@@ -264,12 +263,11 @@
     <h2>Ready for the whole system?</h2>
     <p>Brittany Long and I show you exactly how we use AI for more leads and sales — free, on demand. Reserve your seat and take home her trained GPT too.</p>
     <a class="btn" href="https://elisedarma.com/ai" id="joinBtn">Reserve my free seat &rarr;</a>
-    <p class="fine">Free. Takes 2 minutes. Watch anytime.</p>
   </div>
 
   <footer>
-    <img class="avatar" src="images/elise-headshot.jpg" alt="Elise Darma">
-    <div class="fmeta"><b>Made by Elise Darma</b>elisedarma.com<div class="src">Cowork/Skills/Agents/Code walkthrough steps sourced from the unofficial <a href="https://cowork-set-up.vercel.app/">Claude Cowork Set Up guide</a></div></div>
+    <img class="avatar" src="images/elise-terrazzo.png" alt="Elise Darma">
+    <div class="fmeta"><b>Made by Elise Darma</b>elisedarma.com</div>
   </footer>
 </div>
 
@@ -277,8 +275,8 @@
 const CHAPTERS = [
   {num:'01', id:'cowork', tag:'The new home base', title:'Claude Cowork',
    icon:'<rect x="3" y="4.5" width="18" height="15" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="6.3" cy="6.8" r=".6" fill="currentColor" stroke="none"/><circle cx="8.3" cy="6.8" r=".6" fill="currentColor" stroke="none"/>',
-   changed:'Claude got a desktop app called Cowork. Instead of only living in a chat window, it can open your actual apps — Gmail, Drive, Calendar, Canva, Slack — and work inside them: reading a file, drafting a reply, pulling a number. Same Claude, just sitting at your actual desk instead of behind a chat box.',
-   honest:'It’s only as useful as what you connect and how specific you are. Connect nothing, it does nothing. A vague ask still gets you a vague result.',
+   changed:'Claude got a desktop app called Cowork. Instead of only living in a chat window, it can open your actual apps — Gmail, Drive, Calendar, Canva, Slack — and work inside them: reading a file, drafting a reply, pulling a number.',
+   honest:'It’s only as useful as what you connect and how specific you are.',
    howto:['Open the Claude desktop app and go to the message box in the middle of the Home screen','Click the <b>Cowork</b> toggle next to <b>Chat</b> — Chat only talks, Cowork can actually go do things','Connect the accounts you want it working in (Gmail, Calendar, Drive), then give it the prompt below'],
    howtoLink:{url:'https://cowork-set-up.vercel.app/d/install/open-cowork-inside-the-app', label:'See the real walkthrough with screenshots'},
    steps:['Opens your inbox and calendar','Reads through overnight messages','Writes the 2-minute summary'],
@@ -308,7 +306,7 @@ const CHAPTERS = [
   {num:'03', id:'agents', tag:'On a schedule, not on you', title:'Agents',
    icon:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 3h6"/>',
    changed:'Skills can now run themselves. Agents check something on a schedule you set — daily, weekly — and do the recurring task without you remembering to ask.',
-   honest:'It drafts. It doesn’t send. Anything going out under your name still needs your eyes first — that’s not optional.',
+   honest:'It drafts. It doesn’t send. Anything going out under your name still needs your eyes first.',
    howto:['In Cowork’s sidebar, open <b>Scheduled</b> (next to Projects and Dispatch)','Click <b>New scheduled task</b>, then paste your prompt or point to a saved Skill by name','Pick a cadence (daily, weekly, weekdays) and a time, then save — it runs on its own from there'],
    howtoLink:{url:'https://cowork-set-up.vercel.app/d/scheduling/cowork-scheduled-tasks-set-up-your-first-one', label:'See the real walkthrough with screenshots'},
    steps:['Wakes up on the schedule you set','Checks the one thing you told it to watch','Leaves a draft waiting, never sends it'],
@@ -322,10 +320,10 @@ const CHAPTERS = [
 
   {num:'04', id:'code', tag:'The build-it-yourself part', title:'Claude Code', tint:'lilac',
    icon:'<path d="M9 6l-6 6 6 6"/><path d="M15 6l6 6-6 6"/>',
-   changed:'Claude can now write and assemble an actual working web page — a sales page, a landing page, a small app — from your copy, your brand colors, and a plain description. People are calling this "vibe coding." It’s really just faster drafting.',
+   changed:'Claude can now write and assemble an actual working web page — a sales page, a landing page, a small app — from your copy, your brand colors, and a plain description. People are calling this "vibe coding."',
    honest:'Treat the result as a fast first draft, not a finished site. It still needs a real review and someone who knows your page builder before it goes live.',
    howto:['Open Claude Code (in the app, or the terminal version if you’re comfortable there)','Describe the page you want and paste your copy, brand colors, and any must-haves','Review what it builds, then hand the code to your developer or page builder'],
-   howtoLink:{url:'https://elisedarma.com/ai', label:'Build a sales page together in just minutes with my AI coach'},
+   howtoLink:{url:'http://elisedarma.com/sales-page', label:'Build a sales page together in just minutes with my AI coach'},
    linkImage:'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/Etilta8Dylr4UYavb7AB/media/67bd30d731c3155e31f293c4.jpeg',
    steps:['Reads your copy and brand colors','Lays out a header, the offer, and one button','Hands you working code to review and move over'],
    tpl:'Build me a [sales page / landing page] for [the offer]. Here’s the copy: [paste]. Brand colors: [hex codes]. Keep it to a header, the offer, and one button.',
